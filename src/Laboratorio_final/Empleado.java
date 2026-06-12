@@ -32,7 +32,17 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{id=" + idEmpleado + ", nombre=" + nombre + ", cargo=" + cargo + "}";
+        return String.format(
+            "--- EMPLEADO ---%n" +
+            "ID:              %d%n" +
+            "Nombre:          %s%n" +
+            "Cargo:           %s%n" +
+            "Horario entrada: %s%n" +
+            "Horario salida:  %s",
+            idEmpleado, nombre, cargo,
+            horarioEntrada != null ? horarioEntrada : "N/A",
+            horarioSalida != null ? horarioSalida : "N/A"
+        );
     }
 }
 

@@ -33,17 +33,12 @@ public class Main {
         venta1.agregarDetalle(det3);
 
         // Mostrar resultados
-        System.out.println("===== SISTEMA DE VENTAS =====");
+        System.out.println("           SISTEMA DE VENTAS           ");
+        System.out.println("========================================");
         System.out.println(cliente1);
+        System.out.println();
         System.out.println(empleado1);
         System.out.println();
-        System.out.println("===== DETALLE DE VENTA =====");
         System.out.println(venta1);
-        System.out.println();
-        for (DetalleVenta d : venta1.getDetalles()) {
-            System.out.println("  -> " + d);
-        }
-        System.out.println();
-        System.out.printf("TOTAL A PAGAR: $%.2f%n", venta1.calcularTotal());
     }
 }

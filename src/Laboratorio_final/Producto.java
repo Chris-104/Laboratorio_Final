@@ -34,7 +34,9 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{id=" + idProducto + ", nombre=" + nombre +
-               ", precioVenta=" + precioVenta + ", categoria=" + categoria.getNombre() + "}";
+        return String.format(
+            "Producto: %s | Precio: $%.2f | Categoría: %s",
+            nombre, precioVenta, categoria.getNombre()
+        );
     }
 }

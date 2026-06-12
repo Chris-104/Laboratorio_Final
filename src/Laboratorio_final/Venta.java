@@ -42,10 +42,23 @@ public class Venta {
 
     @Override
     public String toString() {
-        return "Venta{id=" + idVenta + ", fecha=" + fecha +
-               ", cliente=" + cliente.getNombre() +
-               ", empleado=" + empleado.getNombre() +
-               ", total=" + calcularTotal() + "}";
+        StringBuilder sb = new StringBuilder();
+        sb.append("========================================\n");
+        sb.append("            TICKET DE VENTA             \n");
+        sb.append("========================================\n");
+        sb.append(String.format("Venta #:   %d%n", idVenta));
+        sb.append(String.format("Fecha:     %s%n", fecha));
+        sb.append(String.format("Cliente:   %s%n", cliente.getNombre()));
+        sb.append(String.format("Empleado:  %s%n", empleado.getNombre()));
+        sb.append("\n--- DETALLE DE PRODUCTOS ---\n");
+        sb.append(String.format("  %-3s %-18s %-4s   %8s   %8s%n", "#", "Producto", "Cant", "P.Unit", "Subtotal"));
+        for (DetalleVenta d : detalles) {
+            sb.append("  ").append(d.toString()).append("\n");
+        }
+        sb.append("----------------------------------------\n");
+        sb.append(String.format("TOTAL A PAGAR:                    %8s%n", String.format("$%.2f", calcularTotal())));
+        sb.append("========================================");
+        return sb.toString();
     }
 
 	public double getTotal() {

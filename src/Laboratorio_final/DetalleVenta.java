@@ -33,7 +33,13 @@ public class DetalleVenta {
 
     @Override
     public String toString() {
-        return "DetalleVenta{id=" + idDetalle + ", producto=" + producto.getNombre() +
-               ", cantidad=" + cantidad + ", subtotal=" + subtotal + "}";
+        return String.format(
+            "%-3d %-18s %4d   %8s   %8s",
+            idDetalle,
+            producto.getNombre(),
+            cantidad,
+            String.format("$%.2f", producto.getPrecioVenta()),
+            String.format("$%.2f", subtotal)
+        );
     }
 }

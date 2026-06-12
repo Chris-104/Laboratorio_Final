@@ -23,8 +23,14 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{id=" + idCliente + ", nombre=" + nombre +
-               ", direccion=" + direccion + ", telefono=" + telefono + "}";
+        return String.format(
+            "--- CLIENTE ---%n" +
+            "ID:        %d%n" +
+            "Nombre:    %s%n" +
+            "Teléfono:  %s%n" +
+            "Dirección: %s",
+            idCliente, nombre, telefono, direccion != null ? direccion : "N/A"
+        );
     }
 }
 
