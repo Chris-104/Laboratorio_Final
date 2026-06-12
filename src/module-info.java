@@ -1,8 +1,2 @@
-/**
- * 
- */
-/**
- * 
- */
-module Laboratorio_final {
+module laboratorio_final {
 }
